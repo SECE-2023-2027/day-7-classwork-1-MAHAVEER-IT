@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation';
 
 function Login() {
@@ -17,10 +17,11 @@ function Login() {
             alert('All fields are required!');
             return;
         }else if (email == eemail && password == ppasword) {
+            localStorage.setItem('authenticated',true);
             console.log("Login SuccessFully");
             router.push('/login/home');
-        } else {
-            console.log("login fail")
+        } else{
+            console.console("login fail")
         }
     }
 

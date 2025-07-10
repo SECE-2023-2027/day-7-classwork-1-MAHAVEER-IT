@@ -8,6 +8,10 @@ function RegisterPage() {
     const [password, setPassword] = useState('');
     const router = useRouter();
 
+    useEffect(()=>{
+        localStorage.setItem('authenticated',false);
+    },[])
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
